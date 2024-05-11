@@ -61,30 +61,34 @@ function Board() {
                     flexDirection: "column",
                     margin: "20px"
                 }} >
+
+                <Typography sx={{color:"white",marginBottom:"15px"}}>Player {isXTurn ? "x" : "o"} Please Move</Typography>
+                <Box component="div" sx={{ display: "flex" }}>
+                    <Square value={state[0]} onClick={() => handleClick(0)} />
+                    <Square value={state[1]} onClick={() => handleClick(1)} />
+                    <Square value={state[2]} onClick={() => handleClick(2)} />
+                </Box>
+                <Box component="div" sx={{ display: "flex" }}>
+                    <Square value={state[3]} onClick={() => handleClick(3)} />
+                    <Square value={state[4]} onClick={() => handleClick(4)} />
+                    <Square value={state[5]} onClick={() => handleClick(5)} />
+                </Box>
+                <Box component="div" sx={{ display: "flex" }}>
+                    <Square value={state[6]} onClick={() => handleClick(6)} />
+                    <Square value={state[7]} onClick={() => handleClick(7)} />
+                    <Square value={state[8]} onClick={() => handleClick(8)} />
+                </Box>
+
+
                 {isWinner ? (
-                    <Typography variant="h4">{isWinner} Won the Game
-                        <Button variant="contained" sx={{backgroundColor:"yellow",color:"black",":hover":{backgroundColor:"darkslategrey"}}}
+                    <Typography variant="h4" sx={{color:"white"}}>{isWinner} Won the Game
+                        <Button variant="contained" sx={{backgroundColor:"yellow",color:"black",":hover":{backgroundColor:"navajowhite"}}}
                             onClick={handleReset}
                         >Play Again</Button>
                     </Typography>
                 ) : (
                     <>
-                    <Typography>Player {isXTurn?"x":"o"} Please Move</Typography>
-                        <Box component="div" sx={{ display: "flex" }}>
-                            <Square value={state[0]} onClick={() => handleClick(0)} />
-                            <Square value={state[1]} onClick={() => handleClick(1)} />
-                            <Square value={state[2]} onClick={() => handleClick(2)} />
-                        </Box>
-                        <Box component="div" sx={{ display: "flex" }}>
-                            <Square value={state[3]} onClick={() => handleClick(3)} />
-                            <Square value={state[4]} onClick={() => handleClick(4)} />
-                            <Square value={state[5]} onClick={() => handleClick(5)} />
-                        </Box>
-                        <Box component="div" sx={{ display: "flex" }}>
-                            <Square value={state[6]} onClick={() => handleClick(6)} />
-                            <Square value={state[7]} onClick={() => handleClick(7)} />
-                            <Square value={state[8]} onClick={() => handleClick(8)} />
-                        </Box>
+                    <p></p>
                     </>
                 )}
             </Box>

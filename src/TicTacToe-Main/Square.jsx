@@ -14,9 +14,10 @@ function Square(props) {
                     justifyContent:"center",
                     border: "1px solid black",
                     height: "100px",
-                    width: 100
-                }}>
-                    <Typography component="h5">
+                    width: 100,
+                    border:"3px solid white"
+                }}> 
+                    <Typography component="h5" sx={{color:"white"}}>
                         {props.value}
                     </Typography>
                 </Box>
